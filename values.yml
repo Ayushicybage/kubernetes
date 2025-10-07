@@ -1,35 +1,28 @@
 namespace: three-tier-app
 
 frontend:
-  replicas: 2
   image: my-frontend:1.0
+  replicas: 2
   servicePort: 80
 
 backend:
-  replicas: 2
   image: my-backend:1.0
+  replicas: 2
   servicePort: 8080
   resources:
     requests:
-      cpu: "100m"
-      memory: "128Mi"
+      cpu: "200m"
+      memory: "256Mi"
     limits:
       cpu: "500m"
       memory: "512Mi"
 
 database:
   image: mysql:8
+  storage: 1Gi
   user: mysql
   password: password
-  dbName: mydb
-  storage: 1Gi
+  dbname: mydb
 
 ingress:
-  enabled: true
   host: myapp.local
-
-hpa:
-  enabled: true
-  minReplicas: 2
-  maxReplicas: 5
-  cpuUtilization: 70
