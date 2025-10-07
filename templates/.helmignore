@@ -1,0 +1,15 @@
+# Ignore executables, binaries, and temp files
+*.exe
+*.zip
+*.tar
+*.tgz
+*.png
+*.jpg
+*.gif
+*.dll
+
+# Ignore OS / dev folders
+.git/
+node_modules/
+dist/
+build/
