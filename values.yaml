@@ -1,4 +1,4 @@
-namespace: three-tier-app
+namespace: three-tier-app-new
 
 frontend:
   image: my-frontend:1.0
